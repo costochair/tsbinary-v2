@@ -3,25 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TS Binary v2 Translator</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            padding: 20px;
-        }
-        textarea {
-            width: 100%;
-            height: 100px;
-            margin-bottom: 10px;
-        }
-        button {
-            padding: 10px 20px;
-            margin: 5px;
-        }
-    </style>
+    <title>TS Binary Translator v2</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h2>TS Binary v2 Translator</h2>
+    <h2>TS Binary Translator v2</h2>
     <textarea id="inputText" placeholder="Enter text here..."></textarea>
     <br>
     <button onclick="translateToTS()">Translate to TS Binary</button>
@@ -30,21 +16,21 @@
     <textarea id="outputText" placeholder="Output will appear here..."></textarea>
 
     <script>
-        // Mapping all common ASCII characters to "ts binary" equivalents
+        // Corrected mapping with no duplicate entries for TS Binary
         const tsBinaryMap = {
             'A': 'TStTStts', 'B': 'TStsTStS', 'C': 'TstTstTs', 'D': 'TstTsTts',
             'E': 'TstsTtSt', 'F': 'tstTtstS', 'G': 'tsttStts', 'H': 'tsTstStS',
             'I': 'tsTsttTS', 'J': 'TsTtstsS', 'K': 'TsTstsTS', 'L': 'TtTstsTs',
             'M': 'TStstsTS', 'N': 'tsTSstTs', 'O': 'tTtSTsTs', 'P': 'TsTsTsts',
             'Q': 'TtStsTts', 'R': 'TsTtstTS', 'S': 'TstsTtTs', 'T': 'TtTstTsS',
-            'U': 'tsttSsts', 'V': 'TsTsTttS', 'W': 'TsTTtsts', 'X': 'tstTsTss',
+            'U': 'tsttSsts', 'V': 'TsTsTttS', 'W': 'TstTsTtt', 'X': 'tstTsTss',
             'Y': 'TtstsTtS', 'Z': 'TsTTTtst',
             'a': 'tstTsTtS', 'b': 'tsTTstst', 'c': 'TsttTsTs', 'd': 'tTsTsTst',
             'e': 'tTstsTtt', 'f': 'tsttTstS', 'g': 'TsTtsTst', 'h': 'TstsTstS',
             'i': 'tstTtsTs', 'j': 'TstTstTS', 'k': 'tsTTstsT', 'l': 'TsTTsTst',
             'm': 'TtTstsTS', 'n': 'TsTTsstt', 'o': 'TsttTsTs', 'p': 'tTsTstTS',
             'q': 'TttTstTS', 'r': 'TtstsTts', 's': 'TsTstsTs', 't': 'tsTttTsS',
-            'u': 'TtTstTss', 'v': 'tstsTtsS', 'w': 'TtstsTts', 'x': 'tstsTtts',
+            'u': 'TtTstTss', 'v': 'tstsTtsS', 'w': 'TtsTtTsT', 'x': 'tstsTtts',
             'y': 'TsTstsTS', 'z': 'TsttstTS',
             '0': 'tstststs', '1': 'Tstststs', '2': 'tsTststs', '3': 'TSTststs',
             '4': 'tstsTsts', '5': 'TstsTsts', '6': 'tsTsTsts', '7': 'TSTsTsts',
