@@ -3,20 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TS Binary Translator</title>
+    <title>TS Binary Translator v2</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h2>TS Binary Translator</h2>
-    <textarea id="inputText" placeholder="Enter text here..."></textarea>
-    <br>
-    <button onclick="translateToTS()">Translate to TS Binary</button>
-    <button onclick="translateToEnglish()">Translate to English</button>
-    <br>
-    <textarea id="outputText" placeholder="Output will appear here..."></textarea>
+    <div class="container">
+        <h2>TS Binary Translator v2</h2>
+        <textarea id="inputText" placeholder="Enter text here..."></textarea>
+        <div class="button-container">
+            <button onclick="translateToTS()">Translate to TS Binary</button>
+            <button onclick="translateToEnglish()">Translate to English</button>
+        </div>
+        <textarea id="outputText" placeholder="Output will appear here..."></textarea>
+    </div>
 
     <script>
-        // Mapping for TS Binary with unique values for each character
         const tsBinaryMap = {
             'A': 'TStTStts', 'B': 'TStsTStS', 'C': 'TstTstTs', 'D': 'TstTsTts',
             'E': 'TstsTtSt', 'F': 'tstTtstS', 'G': 'tsttStts', 'H': 'tsTstStS',
@@ -42,16 +43,14 @@
             '/': 'TsTtstTt', '\\': 'TstsTtTT', '\'': 'TstsTstT', '"': 'TtsTtsTS',
             ':': 'TtsTstTS', ';': 'TsTsttTS', '<': 'TstttTsT', '>': 'TttTsTtT',
             '[': 'TstsTstT', ']': 'TtstTsTT', '{': 'TsTsttsT', '}': 'tTtstsTT',
-            '|': 'TsTtstTT', '~': 'TsTsttTT', ' ': '~'  // Use tilde (~) to represent space
+            '|': 'TsTtstTT', '~': 'TsTsttTT', ' ': '~' 
         };
 
-        // Reverse map for translating TS binary back to English
         const reverseTsBinaryMap = Object.entries(tsBinaryMap).reduce((acc, [key, value]) => {
             acc[value] = key;
             return acc;
         }, {});
 
-        // Function to translate input text to TS Binary
         function translateToTS() {
             const inputText = document.getElementById('inputText').value;
             let output = '';
@@ -60,28 +59,27 @@
                 if (tsBinaryMap[char]) {
                     output += tsBinaryMap[char];
                 } else {
-                    output += char;  // Keep unsupported characters unchanged
+                    output += char;
                 }
             }
 
             document.getElementById('outputText').value = output;
         }
 
-        // Function to translate TS Binary back to English
         function translateToEnglish() {
             const inputText = document.getElementById('inputText').value;
             let output = '';
             let buffer = '';
 
             for (let char of inputText) {
-                if (char === '~') {  // Check for tilde (~) used for spaces
+                if (char === '~') {
                     output += ' ';
-                    buffer = '';  // Reset buffer if space is found
+                    buffer = '';
                 } else {
                     buffer += char;
                     if (reverseTsBinaryMap[buffer]) {
                         output += reverseTsBinaryMap[buffer];
-                        buffer = '';  // Reset buffer after a match
+                        buffer = '';
                     }
                 }
             }
