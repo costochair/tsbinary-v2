@@ -29,6 +29,12 @@ textarea {
     border-radius: 5px;
     border: 1px solid #ccc;
     font-size: 16px;
+    box-sizing: border-box;
+}
+
+#outputText[readonly] {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
 }
 
 .button-container {
@@ -50,9 +56,4 @@ button {
 
 button:hover {
     background-color: #45a049;
-}
-
-#outputText {
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
 }
