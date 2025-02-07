@@ -14,7 +14,7 @@
             <button onclick="translateToTS()">Translate to TS Binary</button>
             <button onclick="translateToEnglish()">Translate to English</button>
         </div>
-        <textarea id="outputText" placeholder="Output will appear here..."></textarea>
+        <textarea id="outputText" placeholder="Output will appear here..." readonly></textarea>
     </div>
 
     <script>
@@ -43,7 +43,7 @@
             '/': 'TsTtstTt', '\\': 'TstsTtTT', '\'': 'TstsTstT', '"': 'TtsTtsTS',
             ':': 'TtsTstTS', ';': 'TsTsttTS', '<': 'TstttTsT', '>': 'TttTsTtT',
             '[': 'TstsTstT', ']': 'TtstTsTT', '{': 'TsTsttsT', '}': 'tTtstsTT',
-            '|': 'TsTtstTT', '~': 'TsTsttTT', ' ': '~' 
+            '|': 'TsTtstTT', '~': 'TsTsttTT', ' ': '~'
         };
 
         const reverseTsBinaryMap = Object.entries(tsBinaryMap).reduce((acc, [key, value]) => {
