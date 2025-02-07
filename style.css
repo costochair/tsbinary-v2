@@ -1,9 +1,24 @@
-/* Minimal style for TS Binary Translator */
+/* Minimal style for TS Binary Translator v2 */
 body {
     font-family: Arial, sans-serif;
     padding: 20px;
     background-color: #f4f4f9;
     color: #333;
+    margin: 0;
+}
+
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #333;
+    text-align: center;
 }
 
 textarea {
@@ -16,9 +31,15 @@ textarea {
     font-size: 16px;
 }
 
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
 button {
-    padding: 10px 20px;
-    margin: 5px;
+    width: 48%;
+    padding: 10px;
     background-color: #4CAF50;
     color: white;
     border: none;
@@ -29,11 +50,6 @@ button {
 
 button:hover {
     background-color: #45a049;
-}
-
-h2 {
-    color: #333;
-    text-align: center;
 }
 
 #outputText {
