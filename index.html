@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TS Binary Translator v2</title>
+    <title>TS Binary Translator</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h2>TS Binary Translator v2</h2>
+    <h2>TS Binary Translator</h2>
     <textarea id="inputText" placeholder="Enter text here..."></textarea>
     <br>
     <button onclick="translateToTS()">Translate to TS Binary</button>
@@ -16,21 +16,21 @@
     <textarea id="outputText" placeholder="Output will appear here..."></textarea>
 
     <script>
-        // Corrected mapping with no duplicate entries for TS Binary
+        // Mapping for TS Binary with unique values for each character
         const tsBinaryMap = {
             'A': 'TStTStts', 'B': 'TStsTStS', 'C': 'TstTstTs', 'D': 'TstTsTts',
             'E': 'TstsTtSt', 'F': 'tstTtstS', 'G': 'tsttStts', 'H': 'tsTstStS',
             'I': 'tsTsttTS', 'J': 'TsTtstsS', 'K': 'TsTstsTS', 'L': 'TtTstsTs',
             'M': 'TStstsTS', 'N': 'tsTSstTs', 'O': 'tTtSTsTs', 'P': 'TsTsTsts',
             'Q': 'TtStsTts', 'R': 'TsTtstTS', 'S': 'TstsTtTs', 'T': 'TtTstTsS',
-            'U': 'tsttSsts', 'V': 'TsTsTttS', 'W': 'TstTsTtt', 'X': 'tstTsTss',
+            'U': 'tsttSsts', 'V': 'TsTsTttS', 'W': 'TtsTtTsT', 'X': 'tstTsTss',
             'Y': 'TtstsTtS', 'Z': 'TsTTTtst',
             'a': 'tstTsTtS', 'b': 'tsTTstst', 'c': 'TsttTsTs', 'd': 'tTsTsTst',
             'e': 'tTstsTtt', 'f': 'tsttTstS', 'g': 'TsTtsTst', 'h': 'TstsTstS',
             'i': 'tstTtsTs', 'j': 'TstTstTS', 'k': 'tsTTstsT', 'l': 'TsTTsTst',
             'm': 'TtTstsTS', 'n': 'TsTTsstt', 'o': 'TsttTsTs', 'p': 'tTsTstTS',
             'q': 'TttTstTS', 'r': 'TtstsTts', 's': 'TsTstsTs', 't': 'tsTttTsS',
-            'u': 'TtTstTss', 'v': 'tstsTtsS', 'w': 'TtsTtTsT', 'x': 'tstsTtts',
+            'u': 'TtTstTss', 'v': 'tstsTtsS', 'w': 'TsTttstS', 'x': 'tstsTtts',
             'y': 'TsTstsTS', 'z': 'TsttstTS',
             '0': 'tstststs', '1': 'Tstststs', '2': 'tsTststs', '3': 'TSTststs',
             '4': 'tstsTsts', '5': 'TstsTsts', '6': 'tsTsTsts', '7': 'TSTsTsts',
@@ -42,7 +42,7 @@
             '/': 'TsTtstTt', '\\': 'TstsTtTT', '\'': 'TstsTstT', '"': 'TtsTtsTS',
             ':': 'TtsTstTS', ';': 'TsTsttTS', '<': 'TstttTsT', '>': 'TttTsTtT',
             '[': 'TstsTstT', ']': 'TtstTsTT', '{': 'TsTsttsT', '}': 'tTtstsTT',
-            '|': 'TsTtstTT', '~': 'TsTsttTT', ' ': '~'  // Use tilde (~) to represent space during translation
+            '|': 'TsTtstTT', '~': 'TsTsttTT', ' ': '~'  // Use tilde (~) to represent space
         };
 
         // Reverse map for translating TS binary back to English
